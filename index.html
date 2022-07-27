@@ -16,7 +16,7 @@
             </label>
             <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
               <li><a href="#">Homepage</a></li>
-              <li><a href="https://youtube.com/c/AndyLukito" class="hover:bg-red-600">YouTube</a></li>
+              <li><a href="https://youtube.com/c/AndyLukito" class="hover:bg-red-600" onclick="andy.play()">YouTube</a></li>
               <li><a href="https://www.instagram.com/unknownlukito/" class="hover:bg-pink-500">Instagram</a></li>
               <li><a href="https://discord.com/invite/eC6k5mjkVt" class="hover:bg-blue-600" onclick="audio.play()">Discord</a></li>
               <li><a href="https://twitter.com/unknownluki" class="hover:bg-sky-300">Twitter</a></li>
@@ -113,7 +113,7 @@
 </div>
                         <hr class="rounded-full">
                         <h1 class="mb-4 text-4xl font-bold tracking-tight text-gray-900 lg:font-extrabold lg:text-10xl lg:leading-none dark:text-white lg:text-center xl:px-36 lg:mb-7">Social Media</h1>
-                        <a href="https://youtube.com/c/AndyLukito" class="bg-red-500 hover:bg-red-600 text-white p-3">YouTube</a>
+                        <a href="https://youtube.com/c/AndyLukito" class="bg-red-500 hover:bg-red-600 text-white p-3" onclick="andy.play()">YouTube</a>
                         
                         <a href="https://www.instagram.com/unknownlukito/" class="bg-pink-400 hover:bg-pink-500 text-white p-3">Instagram</a>
                         
@@ -126,11 +126,11 @@
                           <div class="sm:flex sm:items-center sm:justify-between">
                               <a href="#" class="flex items-center mb-4 sm:mb-0">
                                   <img src="https://yt3.ggpht.com/ytc/AKedOLQ8e0WKt0KBaINgS8pwmtrXcwoaVFNwPK-nuC-dww=s88-c-k-c0x00ffffff-no-rj" class="mr-3 h-8 rounded-full" alt="Logo">
-                                  <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Andy Lukito</span>
+                                  <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white" onclick="andy.play()">Andy Lukito</span>
                               </a>
                               <ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
                                   <li>
-                                      <a href="https://youtube.com/c/AndyLukito" class="mr-4 hover:underline md:mr-6 ">YouTube</a>
+                                      <a href="https://youtube.com/c/AndyLukito" class="mr-4 hover:underline md:mr-6 " onclick="andy.play()">YouTube</a>
                                   </li>
                                   <li>
                                       <a href="https://instagram.com/unknownlukito" class="mr-4 hover:underline md:mr-6">Instagram</a>
@@ -144,7 +144,7 @@
                               </ul>
                           </div>
                           <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8 rounded-full" style="border:none; color: white;">
-                          <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400"> 2022 <a href="#" class="hover:underline">Andy Lukito</a>. 
+                          <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400"> 2022 <a href="#" class="hover:underline" onclick="andy.play()">Andy Lukito</a>. 
                             <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400"> Created By 1121Developer#3978
                           </span>
                       </footer>
@@ -157,6 +157,15 @@ buttons.forEach(button => {
     audio.play();
   });
 });
+
+const andy = new Audio("./andy_lukito.mp3");
+const buttons = document.querySelectorAll("button");
+
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    andy.play();
+  });
+})
 </script>
 </body>
 <style>
