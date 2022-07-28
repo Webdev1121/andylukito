@@ -160,9 +160,13 @@ buttons.forEach(button => {
 
 const andy = new Audio("./andy_lukito.mp3");
 const button2 = document.querySelectorAll("button");
+button2.forEach(button => {
+  button.addEventListener("click", () => {
+    andy.play();
+  });
+});
 
-
-    };
+   
 </script>
 </body>
 <style>
