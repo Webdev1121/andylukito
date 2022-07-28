@@ -161,40 +161,8 @@ buttons.forEach(button => {
 const andy = new Audio("./andy_lukito.mp3");
 const button2 = document.querySelectorAll("button");
 
-button2.forEach(button => {
-  button.addEventListener("click", () => {
-    andy.play();
-  });
-})
 
-var TxtType = function(el, toRotate, period) {
-        this.toRotate = toRotate;
-        this.el = el;
-        this.loopNum = 0;
-        this.period = parseInt(period, 10) || 2000;
-        this.txt = '';
-        this.tick();
-        this.isDeleting = false;
     };
-
-    TxtType.prototype.tick = function() {
-        var i = this.loopNum % this.toRotate.length;
-        var fullTxt = this.toRotate[i];
-
-        if (this.isDeleting) {
-        this.txt = fullTxt.substring(0, this.txt.length - 1);
-        } else {
-        this.txt = fullTxt.substring(0, this.txt.length + 1);
-        }
-
-        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
-
-        var that = this;
-        var delta = 200 - Math.random() * 100;
-
-        if (this.isDeleting) { delta /= 2; }
-
-        if (!this.isDeleting && this.txt === fullTxt) {
 </script>
 </body>
 <style>
@@ -211,9 +179,7 @@ var TxtType = function(el, toRotate, period) {
   
     html::-webkit-scrollbar {
       width: 10px;
-    }
-  
-  html::-webkit-scrollbar-track {
+    } {
       background: rgb(179, 177, 177);
       border-radius: 10px;
   }
