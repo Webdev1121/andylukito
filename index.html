@@ -8,6 +8,17 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.19.0/dist/full.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+    <!-- Page Loader -->
+<!-- Loader Wrapper -->
+<div class="absolute inset-0 z-50 bg-gray-800 flex justify-center items-center transition-all opacity-100 ease-in-out duration-1000 h-screen" id="page-loader">
+    <!-- Loader -->
+    <div class="absolute top-1/2 left-1/2 -ml-24 -mt-3">
+      <h1 class="mb-4 text-4xl font-bold tracking-tight text-gray-900 lg:font-extrabold lg:text-10xl lg:leading-none dark:text-white xl:px-36 lg:mb-7">Loading...</h1>
+        <p class="mb-10 text-lg font-normal text-black  dark:text-white  lg:text-xl xl:px-60 text-white">Hint Easter Egg : Ketik Di Konsol Web funfact()</p>
+    </div>
+  </div>
+  
+  
     <div class="navbar bg-base-100">
         <div class="navbar-start">
           <div class="dropdown">
@@ -172,6 +183,14 @@ button2.forEach(button => {
        console.log("https://graduation.apps.binus.ac.id/graduates/1901459270/ nih link nya");
        alert("ini termasuk easter egg");
    }
+
+
+   const loader = document.getElementById('page-loader')
+
+// Once page is finished loading start the transition to page content. Set timeout is only used here to simulate a page load time of 3 seconds.
+window.addEventListener('load', function(e) {
+    setTimeout(() => { loader.classList.replace('opacity-100', 'opacity-0'); }, 3000);
+})
 </script>
 </body>
 <style>
@@ -189,7 +208,6 @@ button2.forEach(button => {
   
     html::-webkit-scrollbar {
       width: 10px;
-    } {
       background: rgb(179, 177, 177);
       border-radius: 10px;
   }
