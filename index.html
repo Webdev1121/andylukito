@@ -34,10 +34,10 @@
       <center>
     <img width="120" height="130" src="https://yt3.ggpht.com/ytc/AKedOLQ8e0WKt0KBaINgS8pwmtrXcwoaVFNwPK-nuC-dww=s88-c-k-c0x00ffffff-no-rj" class="rounded-full max-w-full h-auto p-1" />
       
-    <h1 class="mb-4 text-4xl font-bold tracking-tight text-gray-900 lg:font-extrabold lg:text-10xl lg:leading-none dark:text-white lg:text-center xl:px-36 lg:mb-7">Andy Lukito</h1>
-    <p class="mb-10 text-lg font-normal text-gray-500 dark:text-gray-400 lg:text-center lg:text-xl xl:px-60">Hai! Perkenalkan, Nama Saya <b class="text-blue-600">Andy Lukito</b></p>
-    <p class="mb-10 text-lg font-normal text-gray-500 dark:text-gray-400 lg:text-center lg:text-xl xl:px-60">Saya Adalah Game Developer Asal <b>Indonesia, Jakarta</b></p>
-    <p class="mb-10 text-lg font-normal text-gray-500 dark:text-gray-400 lg:text-center lg:text-xl xl:px-60">Saya Adalah Pendiri Perusahaan Game Yang Bernama <b class="text-red-200">Akhir Pekan Studio</b>
+    <h1 class="mb-4 text-4xl font-bold tracking-tight text-gray-900 lg:font-extrabold lg:text-10xl lg:leading-none dark:text-white lg:text-center xl:px-36 lg:mb-7" class="typewrite" data-period="2000" data-type='[ "Halo, Nama Saya Andy Lukito.", "Saya Suka Membuat Games.", "Saya Mendirikan Perusahaan Bernama Akhir Pekan Studio"]'>
+    <span class="wrap"></span></h1>
+   
+  
     <hr class="rounded-full">
     <h1 class="mb-4 text-4xl font-bold tracking-tight text-gray-900 lg:font-extrabold lg:text-10xl lg:leading-none dark:text-white lg:text-center xl:px-36 lg:mb-7">Game Buatan Akhir Pekan Studio</h1>
    <center>
@@ -166,6 +166,35 @@ button2.forEach(button => {
     andy.play();
   });
 })
+
+var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
 </script>
 </body>
 <style>
