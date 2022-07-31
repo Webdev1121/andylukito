@@ -9,74 +9,9 @@
     <link href="https://andy.1121dev.cf/daisyui.css" rel="stylesheet" type="text/css" />
     
 
-    <style>
-/* Center the loader */
-#loader {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  z-index: 1;
-  width: 120px;
-  height: 120px;
-  margin: -76px 0 0 -76px;
-  border: 16px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 16px solid #3498db;
-  -webkit-animation: spin 1s linear infinite;
-  animation: spin 0.6s linear infinite;
-}
-
-@-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* Add animation to "page content" */
-.animate-bottom {
-  position: relative;
-  -webkit-animation-name: animatebottom;
-  -webkit-animation-duration: 1s;
-  animation-name: animatebottom;
-  animation-duration: 1s
-}
-
-@-webkit-keyframes animatebottom {
-  from { bottom:-100px; opacity:0 } 
-  to { bottom:0px; opacity:1 }
-}
-
-@keyframes animatebottom { 
-  from{ bottom:-100px; opacity:0 } 
-  to{ bottom:0; opacity:1 }
-}
-
-#myDiv {
-  display: none;
-  text-align: center;
-}
-</style>
-
-  <body class="bg-gradient-to-br from-gray-900 to-black">
-   
-    </div>
-  </div>
-  
-  <script>
-module.exports = {
-  darkMode: 'class',
-  // ...
-}
-
-function toggleDarkMode() {
-  var element = document.getElementById("parent");
-  element.classList.toggle("dark");
-}
-</script>
+    
+   <body>
+ 
     <div class="navbar bg-base-100">
         <div class="navbar-start">
           <div class="dropdown">
@@ -242,14 +177,6 @@ button2.forEach(button => {
        console.log("https://graduation.apps.binus.ac.id/graduates/1901459270/ nih link nya");
        alert("ini termasuk easter egg");
    }
-
-
-   const loader = document.getElementById('page-loader')
-
-// Once page is finished loading start the transition to page content. Set timeout is only used here to simulate a page load time of 3 seconds.
-window.addEventListener('load', function(e) {
-    setTimeout(() => { loader.classList.replace('opacity-100', 'opacity-0'); }, 3000);
-})
 </script>
 </body>
 <style>
