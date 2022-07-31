@@ -8,6 +8,11 @@
 <script src="./tailwindcss.js"></script>
     <link href="./daisyui.css" rel="stylesheet" type="text/css" />
 </head>
+    <body onload="myFunction()" style="margin:0;">
+
+<div id="loader"></div>
+<div id="loader2"><p class="mb-10 text-lg font-normal text-gray-500 dark:text-gray-400 lg:text-center lg:text-xl xl:px-60">Loading TailwindCSS Component...</p></div>
+<div style="display:none;" id="myDiv" class="animate-bottom">
     <style>
 /* Center the loader */
 #loader {
@@ -59,12 +64,6 @@
   text-align: center;
 }
 </style>
-
-<body onload="myFunction()" style="margin:0;">
-
-<div id="loader"></div>
-<div id="loader2"><p class="mb-10 text-lg font-normal text-gray-500 dark:text-gray-400 lg:text-center lg:text-xl xl:px-60">Loading TailwindCSS Component...</p></div>
-<div style="display:none;" id="myDiv" class="animate-bottom">
 <body>
    
     </div>
