@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+#myCanvas{
+    font-family: P2S;
+  }
+
+@font-face {
+    font-family: P2S;
+    src: url(./../font/p2s.ttf);
+}
+
+.hidden{
+  display:none;
+}
+
+#restartButton{
+  position:absolute;
+  position: fixed;
+  top: -90px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 72px;
+  height: 64px;
+  margin: auto;
+  text-align: center; 
+  cursor:pointer;
+}
+
+.noDrag{
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}
