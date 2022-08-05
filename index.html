@@ -1,273 +1,334 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andy Lukito</title>
-<meta name="google-site-verification" content="aZhX2M2oCOtCg4ZznSGVhsDjz6P5DnA_3vnqtsBC5M4" />
-<script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://andy.1121dev.cf/daisyui.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-	<script>
-		tailwind.config = {
-		module.exports = {
-  content: ['index.html'],
-  darkMode: 'class',
-  theme: {
-    container: {
-      center: true,
-      padding: '16px',
-    },
-    extend: {
-      colors: {
-        primary: '#14b8a6',
-        secondary: '#64748b',
-        dark: '#0f172a',
-      },
-      screens: {
-        '2xl': '1320px',
-      },
-    },
-  },
-  plugins: [],
-};
-	</script>
-    <div id="background-loading">
-	<p class="loading-text font-extrabold">Loading</p>
-        <div class="loader"></div>
-    </div>
-    <div class="content">
-        <div class="navbar bg-base-100">
-        <div class="navbar-start">
-          <div class="dropdown">
-            <label tabindex="0" class="btn btn-ghost btn-circle">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
-            </label>
-            <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-              <li><a href="https://www.andy.1121dev.cf/AndiVSBocilRequest/">Homepage</a></li>
-              <li><a href="https://youtube.com/c/AndyLukito" class="hover:bg-red-600" onclick="andy.play()" target="_blank">YouTube</a></li>
-              <li><a href="https://www.instagram.com/unknownlukito/" class="hover:bg-pink-500">Instagram</a></li>
-              <li><a href="https://discord.com/invite/eC6k5mjkVt" class="hover:bg-blue-600" onclick="audio.play()" target="_blank">Discord</a></li>
-              <li><a href="https://twitter.com/unknownluki" class="hover:bg-sky-300">Twitter</a></li>
-              <li><a href="https://play.google.com/store/apps/developer?id=Akhir+Pekan+Studio" class="hover:bg-green-400">PlayStore</a></li>
-              <li><a href="https://apps.apple.com/id/developer/andy-lukito/id1569363354" class="hover:bg-gray-200">AppStore</a></li>
-            </ul>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Andy Lukito - Template By WPU</title>
+    <link href="dist/css/final.css" rel="stylesheet" />
+    <script>
+      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Header Start -->
+    <header class="absolute top-0 left-0 z-10 flex w-full items-center bg-transparent">
+      <div class="container">
+        <div class="relative flex items-center justify-between">
+          <div class="px-4">
+            <a href="#home" class="block py-6 text-lg font-bold text-primary">Andy Lukito</a>
+          </div>
+          <div class="flex items-center px-4">
+            <button id="hamburger" name="hamburger" type="button" class="absolute right-4 block lg:hidden">
+              <span class="hamburger-line origin-top-left transition duration-300 ease-in-out"></span>
+              <span class="hamburger-line transition duration-300 ease-in-out"></span>
+              <span class="hamburger-line origin-bottom-left transition duration-300 ease-in-out"></span>
+            </button>
+
+            <nav
+              id="nav-menu"
+              class="absolute right-4 top-full hidden w-full max-w-[250px] rounded-lg bg-white py-5 shadow-lg dark:bg-dark dark:shadow-slate-500 lg:static lg:block lg:max-w-full lg:rounded-none lg:bg-transparent lg:shadow-none lg:dark:bg-transparent"
+            >
+              <ul class="block lg:flex">
+                <li class="group">
+                  <a href="#home" class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">Beranda</a>
+                </li>
+                <li class="group">
+                  <a href="#about" class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">Tentang Saya</a>
+                </li>
+                <li class="group">
+                  <a href="#games" class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">Games</a>
+                </li>
+                <li class="group">
+                  <a href="#contact" class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">Contact</a>
+                </li>
+                <li class="mt-3 flex items-center pl-8 lg:mt-0">
+                  <div class="flex">
+                    <span class="mr-2 text-sm text-slate-500">TOO BRIGHT</span>
+                    <input type="checkbox" class="hidden" id="dark-toggle" />
+                    <label for="dark-toggle">
+                      <div class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1">
+                        <div class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out"></div>
+                      </div>
+                    </label>
+                    <span class="ml-2 text-sm text-slate-500">MORE BETTER</span>
+                  </div>
+                </li>
+              </ul>
+            </nav>
           </div>
         </div>
-        <div class="navbar-center">
-          <a class="btn btn-ghost normal-case text-xl font-roboto" href="#" onclick="andy.play()">Andy Lukito</a>
-        </div>
-        <div class="navbar-end">
-
-        </div>
       </div>
-<!-- Hero Section Start -->
+    </header>
+    <!-- Header End -->
+
+    <!-- Hero Section Start -->
     <section id="home" class="pt-36 dark:bg-dark">
       <div class="container">
         <div class="flex flex-wrap">
           <div class="w-full self-center px-4 lg:w-1/2">
-            <h1 class="text-base font-semibold text-primary md:text-xl">Halo Semua 👋, saya <span class="mt-1 block text-4xl font-bold text-dark dark:text-white lg:text-6xl p-6">Andy Lukito</span></h1>
+            <h1 class="text-base font-semibold text-primary md:text-xl">Halo Semua 👋, saya <span class="mt-1 block text-4xl font-bold text-dark dark:text-white lg:text-5xl">Andy Lukito</span></h1>
             <h2 class="mb-5 text-lg font-medium text-secondary lg:text-2xl">Gamedev & <span class="text-dark dark:text-white">Content Creator</span></h2>
 
-            <a href="https://youtube.com/c/AndyLukito" class="rounded-full bg-primary py-3 px-8 text-base font-semibold text-white transition duration-300 ease-in-out hover:opacity-80 hover:shadow-lg" onclick="andy.play()" target="_blank">YouTube</a>
+            <a href="#about" class="rounded-full bg-primary py-3 px-8 text-base font-semibold text-white transition duration-300 ease-in-out hover:opacity-80 hover:shadow-lg">About</a>
           </div>
           <div class="w-full self-end px-4 lg:w-1/2">
             <div class="relative mt-10 lg:right-0 lg:mt-9">
-              <img src="andy.jpg" alt="Andi" class="relative z-10 mx-auto max-w-full rounded-full p-4" width="240" height="210"/>
-              <hr>
+              <img src="andy.jpg" alt="Sandhika Galih" class="relative z-10 mx-auto max-w-full rounded-full" height="500px" width="500px" />
+              <span class="absolute bottom-0 left-1/2 -translate-x-1/2 md:scale-125">
+                <svg width="400" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill="#14b8a6"
+                    d="M47.4,-51C59.2,-35.6,65.1,-17.8,63.4,-1.7C61.7,14.5,52.6,28.9,40.8,36.6C28.9,44.2,14.5,45,-2,47C-18.4,49,-36.8,52.1,-45.4,44.5C-53.9,36.8,-52.5,18.4,-51.2,1.3C-49.9,-15.8,-48.7,-31.7,-40.2,-47.1C-31.7,-62.4,-15.8,-77.3,1,-78.3C17.8,-79.2,35.6,-66.3,47.4,-51Z"
+                    transform="translate(100 100) scale(1.1)"
+                  />
+                </svg>
+              </span>
             </div>
           </div>
         </div>
       </div>
     </section>
     <!-- Hero Section End -->
-	   <center>
-	<h1 class="mb-4 text-4xl font-bold tracking-tight text-gray-900 lg:font-extrabold lg:text-10xl lg:leading-none dark:text-white lg:text-center xl:px-36 lg:mb-7">Biodata</h1>
-	<p class="mb-10 text-lg font-normal text-gray-500 dark:text-gray-400 lg:text-center lg:text-xl xl:px-60">Biodata TIDAK 100% BENAR!</p>
-	<p class="mb-10 text-lg font-normal text-gray-500 dark:text-gray-400 lg:text-center lg:text-xl xl:px-60">Nama : Andy Lukito</p>
-	<p class="mb-10 text-lg font-normal text-gray-500 dark:text-gray-400 lg:text-center lg:text-xl xl:px-60">Tanggal Lahir, Bulan Dan Tahun : 01 Juni 1997</p>
-	<p class="mb-10 text-lg font-normal text-gray-500 dark:text-gray-400 lg:text-center lg:text-xl xl:px-60">Kuliah Di : <a href="https://graduation.apps.binus.ac.id/graduates/1901459270/">Binus University</a></p>  
-	<hr class="rounded-full">
-    <h1 class="mb-4 text-4xl font-bold tracking-tight text-gray-900 lg:font-extrabold lg:text-10xl lg:leading-none dark:text-white lg:text-center xl:px-36 lg:mb-7">Game Buatan Andy Lukito</h1>
-<div class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-    <a href="https://youtu.be/akGto7jutPI">
-       
-    </a>
-    <div class="p-5">
-        <a href="https://youtu.be/akGto7jutPI">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Bakso Simulator</h5>
-            <p class="mb-2 font-bold tracking-tight text-gray-900 dark:text-white"><b class="text-yellow-600 hover:text-underline">Lagi Naik Daun!</b></p>
-        </a>
-        <a href="https://www.andy.1121dev.cf/u_cannot_iskep.mp4"><p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Jadilah Pengusaha Bakso Terkenal Di Kota Bakso City</p></a>
-        <a href="https://youtu.be/akGto7jutPI" class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-            Video YouTube
-        </a>
-    </div>
-</div>
-    </p>
-    <div class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-        <a href="https://www.youtube.com/watch?v=dOD64A9NqzY">
-        <div class="p-5">
-            <a href="https://www.youtube.com/watch?v=dOD64A9NqzY">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Warnet Life</h5>
-            </a>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Jadilah Pengusaha Warnet Terkenal Di Kota !</p>
-            <a href="https://www.youtube.com/watch?v=dOD64A9NqzY" class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                Video YouTube
-            </a>
-        </div>
-        </a>
-    </div>
-<div class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-    <a href="https://www.youtube.com/watch?v=3XZyjjmWXrM&t">
-            <div class="p-5">
-                <a href="https://www.youtube.com/watch?v=3XZyjjmWXrM&t">
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Jump Or Give Up!</h5>
-                </a>
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Game Ini Bikin Orang Ngamuk!</p>
-                <a href="https://www.youtube.com/watch?v=3XZyjjmWXrM&t" class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    Video YouTube
-                </a>
+
+    <!-- About Section Start -->
+    <section id="about" class="pt-36 pb-32 dark:bg-dark">
+      <div class="container">
+        <div class="flex flex-wrap">
+          <div class="mb-10 w-full px-4 lg:w-1/2">
+            <h4 class="mb-3 text-lg font-bold uppercase text-primary">Tentang Saya</h4>
+            <h2 class="mb-5 max-w-md text-3xl font-bold text-dark dark:text-white lg:text-4xl">Nama Saya Adalah Andy Lukito, Dan Saya Kuliah Di Binus University</h2>
+          </div>
+          <div class="w-full px-4 lg:w-1/2">
+            <h3 class="mb-4 text-2xl font-semibold text-dark dark:text-white lg:pt-10 lg:text-3xl">Social Media</h3>
+            <p class="mb-6 text-base font-medium text-secondary lg:text-lg">
+             
+            </p>
+            <div class="flex items-center">
+              <!-- Youtube -->
+              <a
+                href="https://youtube.com/c/AndyLukito"
+                target="_blank"
+                class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+              >
+                <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <title>YouTube</title>
+                  <path
+                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                  />
+                </svg>
+              </a>
+
+              <!-- Instagram -->
+              <a
+                href="https://instagram.com/unknownlukito"
+                target="_blank"
+                class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+              >
+                <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <title>Instagram</title>
+                  <path
+                    d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"
+                  />
+                </svg>
+              </a>
+
+              <!-- Twitter -->
+              <a
+                href="https://twitter.com/unknownluki"
+                target="_blank"
+                class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+              >
+                <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <title>Twitter</title>
+                  <path
+                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                  />
+                </svg>
+              </a>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- About Section End -->
+
+    <!-- Portfolio Section Start -->
+    <section id="games" class="bg-slate-100 pt-36 pb-16 dark:bg-slate-800">
+      <div class="container">
+        <div class="w-full px-4">
+          <div class="mx-auto mb-16 max-w-xl text-center">
+            <h4 class="mb-2 text-lg font-semibold text-primary">Games</h4>
+            <h2 class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl lg:text-5xl">Games Terbaru</h2>
+            <p class="text-md font-medium text-secondary md:text-lg">
+              Berikut Ini Adalah Game Buatan Andy Lukito
+            </p>
+          </div>
+        </div>
+
+        <div class="flex w-full flex-wrap justify-center px-4 xl:mx-auto xl:w-10/12">
+          <div class="mb-12 p-4 md:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
+              <img src="https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/clans/42506010/24383145f4fe80254e0d2580351d6f257ac1aa2f_400x225.png" alt="bakso" width="w-full" />
+            </div>
+            <h3 class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white">Bakso Simulator</h3>
+            <p class="text-base font-medium text-secondary">Buka Usaha Bakso Anda Di Bakso Town</p>
+          </div>
+          <div class="mb-12 p-4 md:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
+              <img src="https://img.itch.zone/aW1nLzg3NjI3MDAucG5n/original/rNbhRx.png" alt="Warnet" width="w-full" />
+            </div>
+            <h3 class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white">Warnet Life</h3>
+            <p class="text-base font-medium text-secondary">Buka Usaha Warnet Anda Di Warnet Life</p>
+          </div>
+          <div class="mb-12 p-4 md:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
+              <img src="data:image/jpeg;base64,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" alt="JOGU" width="400px" height="400px" />
+            </div>
+            <h3 class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white">Jump Or Give Up! [JOGU]</h3>
+            <p class="text-base font-medium text-secondary">Game Bikin Banting HP!</p>
+          </div>
+          <div class="mb-12 p-4 md:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
+              <img src="https://play-lh.googleusercontent.com/uQENAEyEL5faQkP0pcZTUbvkgFWw5rldrow9SNtInYiabwx-_bXFjAKUD6-PngpXWXg" alt="Lou The Slime" width="400px" height="400px"/>
+            </div>
+            <h3 class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white">Lou The Slime</h3>
+            <p class="text-base font-medium text-secondary">Pelihara Seekor Lou.</p>
+		</div>
+	      </div>
+	    </div>
+	    <p class="text-center dark:text-white text-dark">*NOTE! TNABS TIDAK DI MASUKKAN KARENA MASALAH RESPONSIVE PAGE</p>
+				</div>
+			    </div>
+		    </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Portfolio Section End -->
+
+
+    <!-- Contact Section Start -->
+    <section id="contact" class="pt-36 pb-32 dark:bg-slate-800">
+      <div class="container">
+        <div class="w-full px-4">
+          <div class="mx-auto mb-16 max-w-xl text-center">
+            <h4 class="mb-2 text-lg font-semibold text-primary">Contact</h4>
+            <h2 class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl lg:text-5xl">Contact</h2>
+            <p class="text-md font-medium text-secondary md:text-lg">Untuk pertanyaan bisnis: <a href="mailto:akhirpekanstudio@gmail.com">akhirpekanstudio@gmail.com</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Section End -->
+
+    <!-- Footer Start -->
+    <footer class="bg-dark pt-24 pb-12">
+      <div class="container">
+        <div class="flex flex-wrap">
+          <div class="mb-12 w-full px-4 font-medium text-slate-300 md:w-1/3">
+            <h2 class="mb-5 text-4xl font-bold text-white">Andy Lukito</h2>
+            <h3 class="mb-2 text-2xl font-bold">Hubungi Kami</h3>
+            <p>akhirpekanstudio@gmail.com</p>
+          </div>
+          <div class="mb-12 w-full px-4 md:w-1/3">
+            <h3 class="mb-5 text-xl font-semibold text-white">Kategori Tulisan</h3>
+            <ul class="text-slate-300">
+              <li>
+                <a href="#about" class="mb-3 inline-block text-base hover:text-primary">Andy</a>
+              </li>
+              <li>
+                <a href="#games" class="mb-3 inline-block text-base hover:text-primary">Games</a>
+              </li>
+              <li>
+                <a href="#" class="mb-3 inline-block text-base hover:text-primary">Home</a>
+              </li>
+            </ul>
+          </div>
+          <div class="mb-12 w-full px-4 md:w-1/3">
+            <h3 class="mb-5 text-xl font-semibold text-white">Tautan</h3>
+            <ul class="text-slate-300">
+              <li>
+                <a href="#home" class="mb-3 inline-block text-base hover:text-primary">Beranda</a>
+              </li>
+              <li>
+                <a href="#about" class="mb-3 inline-block text-base hover:text-primary">Tentang Saya</a>
+              </li>
+              <li>
+                <a href="#games" class="mb-3 inline-block text-base hover:text-primary">Games</a>
+              </li>
+              <li>
+                <a href="#contact" class="mb-3 inline-block text-base hover:text-primary">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="w-full border-t border-slate-700 pt-10">
+          <div class="mb-5 flex items-center justify-center">
+            <!-- Youtube -->
+            <a
+              href="https://youtube.com/c/AndyLukito"
+              target="_blank"
+              class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+            >
+              <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <title>YouTube</title>
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                />
+              </svg>
+            </a>
+
+            <!-- Instagram -->
+            <a
+              href="https://instagram.com/unknownlukito"
+              target="_blank"
+              class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+            >
+              <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <title>Instagram</title>
+                <path
+                  d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"
+                />
+              </svg>
+            </a>
+
+            <!-- Twitter -->
+            <a
+              href="https://twitter.com/unknownluki"
+              target="_blank"
+              class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+            >
+              <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <title>Twitter</title>
+                <path
+                  d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                />
+              </svg>
+            </a>
+
+           
+          <p class="text-center text-xs font-medium text-slate-500">
+            Dibuat dengan <span class="text-pink-500">❤️</span> oleh 1121Dev, menggunakan
+            <a href="https://tailwindcss.com" target="_blank" class="font-bold text-sky-500">Tailwind CSS</a>. Template By <a href="https://github.com/sandhikagalih/portfolio-tailwind-css">WPU</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- Back to top Start -->
+    <a href="#home" class="fixed bottom-4 right-4 z-[9999] hidden h-14 w-14 items-center justify-center rounded-full bg-primary p-4 hover:animate-pulse" id="to-top">
+      <span class="mt-2 block h-5 w-5 rotate-45 border-t-2 border-l-2"></span>
     </a>
-</div>
-<div class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-    <a href="https://www.youtube.com/watch?v=PgwtlCYB1fQ&t">
-                <div class="p-5">
-                    <a href="https://www.youtube.com/watch?v=PgwtlCYB1fQ&t">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Lou The Slime</h5>
-                    </a>
-                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Game Remake Dari Pou Versi Lou</p>
-                    <a href="https://www.youtube.com/watch?v=PgwtlCYB1fQ&t" class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                        Video YouTube
-                    </a>
-                </div>
-    </a>
-</div>
-<div class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-    <a href="https://www.youtube.com/watch?v=fN-CUWL_F94">
-                    <div class="p-5">
-                        <a href="https://www.youtube.com/watch?v=fN-CUWL_F94">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">TiNabs</h5>
-                        </a>
-                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Game Remake Dari TABS</p>
-                        <a href="https://www.youtube.com/watch?v=fN-CUWL_F94" class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            Video YouTube
-                        </a>
-                    </div>
-    </a>
-</div>
+    <!-- Back to top End -->
 
-</div>
-<center>
-                        <hr class="rounded-full">
-	
-                        <h1 class="mb-4 text-4xl font-bold tracking-tight text-gray-900 lg:font-extrabold lg:text-10xl lg:leading-none dark:text-white lg:text-center xl:px-36 lg:mb-7">Social Media</h1>
-                        <a href="https://youtube.com/c/AndyLukito" class="bg-red-500 hover:bg-red-600 text-white p-3" onclick="andy.play()" target="_blank">YouTube</a>
-                        
-                        <a href="https://www.instagram.com/unknownlukito/" class="bg-pink-400 hover:bg-pink-500 text-white p-3">Instagram</a>
-                        
-                        <a href="https://discord.com/invite/eC6k5mjkVt" class="bg-blue-500 hover:bg-blue-600 text-white p-3" onclick="audio.play()" target="_blank">Discord</a>
-                        
-                        <a href="https://twitter.com/unknownluki" class="bg-sky-300 hover:bg-sky-400 text-white p-3">Twitter</a>
-                        </center>
-                        <hr class="rounded-full">
-                        <footer class="p-4 bg-white rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-900">
-                          <div class="sm:flex sm:items-center sm:justify-between">
-                              <a href="#" class="flex items-center mb-4 sm:mb-0">
-                                  <img src="https://yt3.ggpht.com/ytc/AKedOLQ8e0WKt0KBaINgS8pwmtrXcwoaVFNwPK-nuC-dww=s88-c-k-c0x00ffffff-no-rj" class="mr-3 h-8 rounded-full" alt="Logo">
-                                  <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white" onclick="andy.play()" target="_blank">Andy Lukito</span>
-                              </a>
-                              <ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
-                                  <li>
-                                      <a href="https://youtube.com/c/AndyLukito" class="mr-4 hover:underline md:mr-6 " onclick="andy.play()" target="_blank">YouTube</a>
-                                  </li>
-                                  <li>
-                                      <a href="https://instagram.com/unknownlukito" class="mr-4 hover:underline md:mr-6">Instagram</a>
-                                  </li>
-                                  <li>
-                                      <a href="https://discord.com/invite/eC6k5mjkVt" class="mr-4 hover:underline md:mr-6 " onclick="audio.play()" target="_blank">Discord</a>
-                                  </li>
-                                  <li>
-                                      <a href="https://github.com/webdev1121/andylukito" class="hover:underline">Github</a>
-                                  </li>
-                              </ul>
-                          </div>
-                          <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8 rounded-full" style="border:none; color: white;">
-                          <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400"> 2022 <a href="#" class="hover:underline" onclick="andy.play()">Andy Lukito</a>. 
-                            <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400"> Created By 1121Developer#3978
-                          </span>
-                      </footer>
-<script>
-const audio = new Audio("./uwu_sound_lmao.mp3");
-const buttons = document.querySelectorAll("button");
-
-buttons.forEach(button => {
-  button.addEventListener("click", () => {
-    audio.play();
-  });
-});
-
-const andy = new Audio("./andy_lukito.mp3");
-const button2 = document.querySelectorAll("button");
-button2.forEach(button => {
-  button.addEventListener("click", () => {
-    andy.play();
-  });
-});
-
-   function fact() {
-       alert("fakta : andy kuliah di binus:v");
-       alert("link : https://graduation.apps.binus.ac.id/graduates/1901459270/");
-       console.log("https://graduation.apps.binus.ac.id/graduates/1901459270/ nih link nya");
-       alert("ini termasuk easter egg");
-   }
-</script>
-</body>
-<style>
-    hr {
-      margin: 70px;
-      border: none;
-       clear: both;
-    visibility: hidden;
-      height: 5px;
-    }
-  
-    html {
-      scroll-behavior: smooth;
-    }
-  
-    html::-webkit-scrollbar {
-      width: 10px;
-      background: rgb(179, 177, 177);
-      border-radius: 10px;
-  }
-  
-  html::-webkit-scrollbar-thumb {
-      background: rgb(136, 136, 136);
-      border-radius: 10px;
-    }
-  
-  html::-webkit-scrollbar-thumb:hover {
-      background: rgb(100, 100, 100);
-      border-radius: 10px;
-    }
-  
-  html::-webkit-scrollbar-thumb:active {
-      background: rgb(68, 68, 68);
-      border-radius: 10px;
-    }  
-  </style>
-    </div>
-
-    <script src="./jquery.js"></script>
-    <script>
-        $(window).load(function(){
-            $('#background-loading').fadeOut("slow");
-        });
-    </script>
-</body>
+    <script src="dist/js/script.js"></script>
+  </body>
 </html>
